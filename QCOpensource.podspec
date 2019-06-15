@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'QCOpensource'
   s.version          = '0.1.0'
-  s.summary          = 'QCOpensource !!!'
+  s.summary          = 'QCOpensource lib !!!'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
   This is My lib
+  Open soruce open lib
                        DESC
 
   s.homepage         = 'https://github.com/pikachu987/QCOpensource'

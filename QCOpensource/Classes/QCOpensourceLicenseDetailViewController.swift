@@ -63,8 +63,8 @@ open class QCOpensourceLicenseDetailViewController: UIViewController {
             ])
         do{
             let text = attributedString.string
-            let mentionExpression = try NSRegularExpression(pattern: "(?i)https?://(?:www\\.)?\\S+(?:/|\\b)", options: NSRegularExpression.Options.allowCommentsAndWhitespace)
-            let matches = mentionExpression.matches(in: text, options: NSRegularExpression.MatchingOptions.init(rawValue: 0), range: NSMakeRange(0, text.count))
+            let mentionExpression = try NSRegularExpression(pattern: "(?i)https?://(?:www\\.)?\\S+(?:/|\\b)", options: .allowCommentsAndWhitespace)
+            let matches = mentionExpression.matches(in: text, options: .init(rawValue: 0), range: NSRange(location: 0, length: text.count))
             for match in matches{
                 let range = match.range
                 let rangeValue = text.index(text.startIndex, offsetBy: range.location)..<text.index(text.startIndex, offsetBy: range.location+range.length)
@@ -74,7 +74,7 @@ open class QCOpensourceLicenseDetailViewController: UIViewController {
                     NSAttributedString.Key.link: matchString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "",
                     NSAttributedString.Key.underlineColor: UIColor(red: 6/255, green: 69/255, blue: 173/255, alpha: 1),
                     NSAttributedString.Key.foregroundColor: UIColor(red: 6/255, green: 69/255, blue: 173/255, alpha: 1),
-                    NSAttributedString.Key.underlineStyle: NSUnderlineStyle.styleSingle.rawValue
+                    NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
                     ], range: range)
             }
         } catch{ }

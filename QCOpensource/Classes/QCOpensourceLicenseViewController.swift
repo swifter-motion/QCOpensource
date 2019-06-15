@@ -25,7 +25,7 @@ open class QCOpensourceLicenseViewController: UIViewController {
     private var opensources = [QCOpensource]()
     
     private let tableView: UITableView = {
-        let tableView = UITableView(frame: CGRect.zero, style: UITableView.Style.plain)
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
