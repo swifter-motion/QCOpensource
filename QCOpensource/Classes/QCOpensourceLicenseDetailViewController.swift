@@ -28,15 +28,9 @@ open class QCOpensourceLicenseDetailViewController: UIViewController {
         return self._opensource
     }
     
-    private lazy var textView: UITextView = {
+    private let textView: UITextView = {
         let textView = UITextView(frame: .zero)
         textView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(textView)
-        let leadingConstraint = NSLayoutConstraint(item: self.view, attribute: .leading, relatedBy: .equal, toItem: textView, attribute: .leading, multiplier: 1, constant: 0)
-        let trailingConstraint = NSLayoutConstraint(item: self.view, attribute: .trailing, relatedBy: .equal, toItem: textView, attribute: .trailing, multiplier: 1, constant: 0)
-        let topConstraint = NSLayoutConstraint(item: self.view, attribute: .top, relatedBy: .equal, toItem: textView, attribute: .top, multiplier: 1, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: self.view, attribute: .bottom, relatedBy: .equal, toItem: textView, attribute: .bottom, multiplier: 1, constant: 0)
-        self.view.addConstraints([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
         return textView
     }()
     
@@ -51,6 +45,14 @@ open class QCOpensourceLicenseDetailViewController: UIViewController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addSubview(self.textView)
+        guard let view = self.view else { return }
+        let leadingConstraint = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self.textView, attribute: .leading, multiplier: 1, constant: 0)
+        let trailingConstraint = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self.textView, attribute: .trailing, multiplier: 1, constant: 0)
+        let topConstraint = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self.textView, attribute: .top, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self.textView, attribute: .bottom, multiplier: 1, constant: 0)
+        self.view.addConstraints([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
         
         self.textView.delegate = self
         self.textView.isEditable = false
