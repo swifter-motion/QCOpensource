@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'QCOpensource_Example' do
+  pod 'QCOpensource', :path => '../'
+
+  target 'QCOpensource_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

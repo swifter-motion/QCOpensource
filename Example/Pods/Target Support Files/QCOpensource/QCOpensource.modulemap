@@ -1,0 +1,6 @@
+framework module QCOpensource {
+  umbrella header "QCOpensource-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - QCOpensource (0.1.0)
+
+DEPENDENCIES:
+  - QCOpensource (from `../`)
+
+EXTERNAL SOURCES:
+  QCOpensource:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  QCOpensource: a3302535282bebea1b7040500f89a438eb37379a
+
+PODFILE CHECKSUM: b2d5bf88908eec8b0f9b9a7413323b35c3343724
+
+COCOAPODS: 1.7.2
